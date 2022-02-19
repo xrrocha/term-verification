@@ -1,0 +1,110 @@
+body {
+	font-family: Verdana;
+	font-size: 12px;
+}
+
+.startFields fieldset {
+	width: 250px;
+}
+
+.startFields label {
+    width: 80px;
+    display: inline-block;
+}
+
+.startFields input {
+    display: inline-block;
+}
+
+legend {
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+.container {
+	width: 880px;
+	height: 520px;
+}
+
+.termList {
+	float: left;
+	width: 25%;
+	height: 100%;
+	border-style: inset;
+}
+
+.termDetail {
+	float: right;
+	width: 70%;
+	height: 110%;
+	border-style: inset;
+}
+
+.termSection {
+	width: 100%;
+	height: 70%;
+}
+
+.similarSection {
+    width: 100%;
+    height: 30%;
+}
+
+.nameList {
+	float: left;
+	width: 40%;
+	height: 100%;
+}
+
+.termData {
+	float: right;
+	width: 60%;
+    height: 100%;
+}
+
+.termTitle {
+	text-align: center;
+	font-size: 150%;
+	font-weight: bold;
+	font-style: italic;
+	color: navy;
+}
+
+.termType {
+	padding-left: 4px;
+	padding-bottom: 4px;
+}
+
+.termUsages {
+	width: 90%;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+.save {
+	text-align: center;
+}
+
+.similarList {
+	float: left;
+	width: 40%;
+    height: 100%;
+    padding-top: 8px;
+}
+
+.similarNames {
+	float: right;
+    width: 60%;
+    height: 100%;
+    padding-top: 8px;
+}
+
+a:link {
+	color: blue;
+	text-decoration: underline;
+}
+
+a:visited {
+	color: blue;
+	text-decoration: underline;
+}

@@ -1,0 +1,14 @@
+*.log
+/.cache
+/.classpath
+/.history
+/.idea
+/.idea_modules
+/.project
+/.settings
+/data
+/other
+/target
+/term-verification.iml
+/to-do.txt
+attic/

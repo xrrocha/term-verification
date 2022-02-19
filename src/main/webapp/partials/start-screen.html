@@ -1,0 +1,41 @@
+<p>
+    Please enter the starting term and the number of terms
+    per page  for this session
+</p>
+
+<div style="width: 350px;">
+	<fieldset class="startFields">
+		<legend>Terms</legend>
+        <div>
+            <label for="pageSize">Page size:</label>
+            <input id="pageSize" ng-model="options.pageSize" size="2">
+        </div>
+        <div>
+            <label for="startTerm">Start term:</label>
+            <input id="startTerm" ng-model="options.startTerm" size="16">
+        </div>
+        <div>
+            <span>Term types:</span><br>
+            <input type="checkbox" ng-model="options.termTypes.name">Name<br>
+            <input type="checkbox" ng-model="options.termTypes.nonName">Non-name<br>
+            <input type="checkbox" ng-model="options.termTypes.abbreviation">Abbreviation<br>
+            <input type="checkbox" ng-model="options.termTypes.typo">Typo<br>
+            <input type="checkbox" ng-model="options.termTypes.mixup">Mixup<br>
+            <input type="checkbox" ng-model="options.termTypes.other">Other<br>
+            <input type="checkbox" ng-model="options.termTypes.undef">Undefined<br>
+        </div>
+        <div style="text-align: center;">
+            <br>
+            <button ng-click="changeView('/terms')">Start Verification</button>
+        </div>
+	</fieldset>
+</div>
+
+<p>Recently verified terms:</p>
+<div>
+    <ul>
+        <li ng-repeat="recentTerm in recentTerms">{{recentTerm.termId}}</li>
+    </ul>
+</div>
+
+

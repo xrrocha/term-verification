@@ -1,0 +1,78 @@
+
+<div class="container">
+    <div class="termList">
+        <div style="height: 95%;" ng-grid="termGridOptions"></div>
+        <div style="text-align: center;">
+            <button ng-click="termsBack()" style="float: left;">&nbsp;&lt;&lt;&nbsp;</button>
+            <button ng-click="termsForward()" style="float: right;">&nbsp;&gt;&gt;&nbsp;</button>
+        </div>
+    </div>
+
+    <div class="termDetail">
+        <div class="termSection">
+            <div class="nameList" ng-grid="nameGridOptions"></div>
+
+            <div class="termData">
+                <div class="termTitle">{{term.termId}}</div>
+
+                <div class="termType">
+                    <input id="name" ng-model="term.termType" type="radio" value="n">
+                    <label for="name">Name Term</label>
+                    <div class="termUsages" ng-show="term.termType == 'n'">
+                        <fieldset>
+                            <legend>Term Usages</legend>
+                            <table>
+                                <tr ng-repeat="usage in usages">
+                                    <td><input type="checkbox" ng-model="usage.used"></td>
+                                    <td>{{usage.title}}</td>
+                                    <td><input ng-model="usage.baseTermId" placeholder="accented form"></td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                    </div>
+                    <br>
+
+                    <input id="abbreviation" ng-model="term.termType" type="radio" value="a">
+                    <label for="abbreviation">Abbreviation</label>
+                    <div class="termUsages" ng-show="term.termType == 'a'">
+                        <input ng-model="term.baseTermId" placeholder="Accented expanded term">
+                    </div>
+                    <br>
+
+                    <input id="typo" ng-model="term.termType" type="radio" value="t">
+                    <label for="typo">Typo</label>
+                    <div class="termUsages" ng-show="term.termType == 't'">
+                        <input ng-model="term.baseTermId" placeholder="Accented correct term">
+                    </div>
+                    <br>
+
+                    <input id="nonName" ng-model="term.termType" type="radio" value="x">
+                    <label for="nonName">Non-name Term</label>
+                    <br>
+                    
+                    <input id="other" ng-model="term.termType" type="radio" value="o">
+                    <label for="other">Other</label>
+                    <br>
+                    
+                    <input id="mixup" ng-model="term.termType" type="radio" value="m">
+                    <label for="mixup">Word mixup</label>
+                    <br>
+                </div>
+
+
+                <div class="save">
+                    <button ng-click="saveChanges()">Save Changes</button>
+                    &nbsp;&nbsp;&nbsp; <img src="img/google-logo.png" width="75"
+                        height="25" onclick="googleItUp('{{term.termId}}')">
+                </div>
+            </div>
+        </div>
+        <div class="similarSection">
+            <div class="similarList" ng-grid="similarGridOptions"></div>
+            <div class="similarNames" ng-grid="similarNameGridOptions"></div>
+        </div>
+    </div>
+</div>
+<p>Select a term by clicking on it on the left-hand side list.
+    Selecting a term will cause its data and name list to be displayed on
+    the right side.</p>
